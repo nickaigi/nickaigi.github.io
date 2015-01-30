@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+body{
+  font-family: "URW Gothic L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #adafb3;
+  padding-top: 70px !important;
+}
+
+main{
+  margin: 20px 0;
+}
+
+footer a,
+footer a:visited {
+  color: #f35;
+  text-decoration: none;
+  outline: none;
+}
+
+footer{
+  margin: 20px 0;
+}
