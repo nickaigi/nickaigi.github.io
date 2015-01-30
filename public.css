@@ -8,7 +8,7 @@ body{
   font-family: "URW Gothic L", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 300;
-  color: #adafb3;
+  color: #bfe1bf;
   padding-top: 70px !important;
 }
 
@@ -17,12 +17,39 @@ main{
 }
 
 footer a,
-footer a:visited {
-  color: #f35;
+footer a:visited,
+main span,
+main a,
+main a:visited {
+  color: #fcd059;
   text-decoration: none;
   outline: none;
 }
 
 footer{
   margin: 20px 0;
+}
+
+@media screen and (min-width: 960px){
+  body{
+    padding: 20px 200px;
+  }
+}
+@media screen and (max-width: 960px){
+  body{
+    padding: 20px 100px;
+  }
+  main #fore img{
+    height: auto;
+  }
+}
+@media screen and (max-width: 768px){
+  body{
+    padding: 20px 50px;
+  }
+}
+@media screen and (max-width: 524px){
+  body{
+    padding: 20px;
+  }
 }
