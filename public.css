@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+
 *{
   margin: 0;
   padding: 0;
@@ -5,10 +7,10 @@
 }
 
 body{
-  font-family: "URW Gothic L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 15px;
   font-weight: 300;
-  color: #bfe1bf;
+  color: #de5842;
   padding-top: 70px !important;
 }
 
