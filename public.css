@@ -10,7 +10,7 @@ body{
   font-family: 'Josefin Sans', sans-serif;
   font-size: 15px;
   font-weight: 300;
-  color: #de5842;
+  color: #333132;
   padding-top: 70px !important;
 }
 
@@ -23,7 +23,7 @@ footer a:visited,
 main span,
 main a,
 main a:visited {
-  color: #fcd059;
+  color: #d12124;
   text-decoration: none;
   outline: none;
 }
