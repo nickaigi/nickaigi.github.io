@@ -1,27 +1,251 @@
 <!DOCTYPE html>
-<html lang='en'>
-    <head>
-        <title>Nickson Kaigi</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <meta name='description' content='Hi, I am Nickson Kaigi, a kenyan based web tools developer. I am passionate about open source software.'>
-        <meta name='keywords' content='nickaigi, nickson, kaigi, github, portfolio, kenya, kenyan, python, django, javascript'>
-        <link rel='shortcut icon' href='images/favicon.ico'>
-        <link href='public.css' rel='stylesheet' media='screen'>
-    </head>
-    <body>
-        <header>
-            <img src='images/logo.png' height="100px"/>
-        </header>
-        <main role="main">
-            <div>
-                <h1>
-                    Hi, I am <a href='https://twitter.com/nickaigi' target='_blank'>Nickson Kaigi</a>, a web tools developer. I try to be vocal about <a href='https://github.com/nickaigi' target='_blank'>open source</a> software. I am currently available to join new projects.
-                </h1>
-            </div>
-        </main>
-        <footer>
-            <h1>&copy; <i id='year'></i>&nbsp;<a href='https://twitter.com/nickaigi' target='_blank'>@nickaigi</a></h1>
-        </footer>
-        <script src='public.js' type='text/javascript'></script>
-    </body>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nickson Kaigi · Full-Stack Python Engineer</title>
+<meta name="description" content="Nickson Kaigi is a full-stack Python engineer in Nairobi with over a decade of experience building fast, reliable SaaS backends with Django, FastAPI, PostgreSQL and AWS.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e8edf1; --panel:#f6f8fa; --ink:#0f2233; --muted:#4d6172; --line:#c3cfd8; --accent:#2340e6; --accent-ink:#fff;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0e1a26;--panel:#152435;--ink:#e6eef5;--muted:#9bb0c1;--line:#28405a;--accent:#8ea2ff;--accent-ink:#0e1a26}
+}
+:root[data-theme="dark"]{--bg:#0e1a26;--panel:#152435;--ink:#e6eef5;--muted:#9bb0c1;--line:#28405a;--accent:#8ea2ff;--accent-ink:#0e1a26}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;gap:1rem}
+header.top a{text-decoration:none;font-weight:500}
+nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+nav a:hover{color:var(--accent)}
+button.theme{font:inherit;background:none;border:1px solid var(--line);color:var(--ink);border-radius:2rem;padding:.25rem .8rem;cursor:pointer}
+button.theme:hover{border-color:var(--accent)}
+
+/* hero */
+.hero{padding:4.5rem 0 3.5rem}
+.hero .name{margin:0 0 1.5rem;font:500 1.125rem var(--display);color:var(--muted)}
+.hero h1{font:800 clamp(2.6rem,8.5vw,6.25rem)/.98 var(--display);letter-spacing:-.03em;margin:0;max-width:14ch}
+.hero h1 span{display:block}
+.hero p.lede{max-width:38rem;margin:2rem 0 0;font-size:1.25rem;color:var(--muted)}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:.4rem;text-decoration:none;font-weight:500;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+
+/* the one memorable moment: staggered headline load */
+.hero h1 span{opacity:0;transform:translateY(.4em);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1 span:nth-child(2){animation-delay:.15s}
+.hero h1 span:nth-child(3){animation-delay:.3s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero h1 span{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}.btn{transition:none}}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.7rem,4vw,2.4rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 2rem}
+h3{font:500 1.35rem/1.25 var(--display);margin:0}
+
+/* impact */
+.impact{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:2.5rem 2rem}
+.impact strong{display:block;font:800 3rem/1 var(--display);letter-spacing:-.03em;color:var(--accent)}
+.impact p{margin:.5rem 0 0;color:var(--muted);font-size:1rem}
+.impact em{font-style:normal;color:var(--ink);display:block}
+
+/* experience */
+.job{display:grid;grid-template-columns:10rem 1fr;gap:.5rem 2.5rem;padding:1.75rem 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{color:var(--muted);font-size:.95rem;padding-top:.3rem}
+.role{color:var(--muted);margin:.15rem 0 .75rem}
+.job ul{margin:0 0 .9rem;padding-left:1.15rem}
+.job li{margin:.35rem 0;max-width:42rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0;list-style:none}
+.tags li{margin:0;font-size:.85rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:2rem;background:var(--panel)}
+details{margin-top:1rem;border-top:1px solid var(--line)}
+summary{cursor:pointer;padding:1.25rem 0;font:500 1.2rem var(--display)}
+summary:hover{color:var(--accent)}
+.early{display:grid;grid-template-columns:10rem 1fr;gap:.35rem 2.5rem;margin:0;padding-bottom:1rem}
+.early dt{color:var(--muted);font-size:.95rem}
+.early dd{margin:0 0 1rem;max-width:42rem}
+.early b{font-weight:500}
+
+/* skills */
+.skills{display:grid;grid-template-columns:10rem 1fr;gap:.9rem 2.5rem;margin:0}
+.skills dt{font:500 1.1rem var(--display)}
+.skills dd{margin:0}
+.edu{max-width:42rem}
+.edu p{margin:.3rem 0;color:var(--muted)}
+
+/* contact */
+.contact h2{font-size:clamp(2rem,6vw,3.6rem)}
+.contact a.mail{font:500 clamp(1.2rem,4vw,1.9rem) var(--display);text-decoration-thickness:2px;text-underline-offset:.25em;color:var(--accent)}
+.links{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+
+@media (max-width:40rem){
+  .job,.early,.skills{grid-template-columns:1fr}
+  .hero{padding-top:2.5rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a href="#top" aria-label="Nickson Kaigi, home">nickaigi</a>
+    <nav aria-label="Primary">
+      <a href="#work">Impact</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      <button class="theme" id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <p class="name">Nickson Kaigi · Full-stack Python engineer · Nairobi</p>
+      <h1><span>Fast APIs.</span><span>Quiet databases.</span><span>Boring deploys.</span></h1>
+      <p class="lede">I build and tune SaaS backends with Django, FastAPI and PostgreSQL. I've done it remotely for teams in the UK, US and New Zealand since 2012, from first prototype to production.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:nickaigi@gmail.com">Email me</a>
+        <a class="btn" href="https://github.com/nickaigi">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/nickson-kaigi">LinkedIn</a>
+      </div>
+    </div>
+
+    <section id="work" aria-labelledby="h-impact">
+      <h2 id="h-impact">What changed after I worked on it</h2>
+      <div class="impact">
+        <div><strong>50%</strong><p><em>Faster API responses</em>Partitioned high-volume PostgreSQL tables at SKUify, which also cut query latency by 30%.</p></div>
+        <div><strong>40%</strong><p><em>More throughput</em>Migrated REST APIs from Django REST Framework to FastAPI at FreeCast.</p></div>
+        <div><strong>25%</strong><p><em>Lower infrastructure cost</em>Moved services to Dockerized AWS Lambda endpoints.</p></div>
+        <div><strong>500+</strong><p><em>Sellers with automated reports</em>Amazon SP-API dashboards that replaced manual sales reporting.</p></div>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="h-exp">
+      <h2 id="h-exp">Experience</h2>
+
+      <article class="job">
+        <div class="when">Dec 2023 – Dec 2024<br>Remote, UK</div>
+        <div>
+          <h3>SKUify Limited</h3><p class="role">Full-stack engineer</p>
+          <ul>
+            <li>Partitioned PostgreSQL tables for high-volume datasets: query latency down 30%, API response times down 50%.</li>
+            <li>Built seller analytics dashboards on Amazon SP-API, automating sales reports for 500+ users.</li>
+            <li>Maintained Jenkins workflows for zero-downtime deployments, improving release efficiency by 20%.</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li>Django</li><li>React</li><li>PostgreSQL</li><li>Celery</li><li>Jenkins</li><li>DigitalOcean</li></ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Sep 2022 – Nov 2023<br>Remote, USA</div>
+        <div>
+          <h3>FreeCast Inc</h3><p class="role">Back-end engineer</p>
+          <ul>
+            <li>Migrated REST APIs from Django REST Framework to FastAPI: 40% more requests per second and lower latency.</li>
+            <li>Deployed serverless endpoints on AWS Lambda with Docker, cutting infrastructure costs by 25%.</li>
+            <li>Shipped features with a cross-functional team in two-week sprints.</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li>FastAPI</li><li>Django</li><li>AWS Lambda</li><li>MySQL</li><li>Docker</li><li>GitHub Actions</li></ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Nov 2021 – Jul 2022<br>Remote, UK</div>
+        <div>
+          <h3>Sum Software Limited</h3><p class="role">Full-stack engineer</p>
+          <ul>
+            <li>Built the "Journey" component of Sumfully, a SaaS for inventory management for Amazon and arbitrage sellers.</li>
+            <li>Wrote Python scripts that generated report data from Amazon's SOAP-based Marketplace Web Service (MWS).</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li>Django</li><li>Django REST Framework</li><li>React</li><li>PostgreSQL</li><li>Celery</li><li>Jenkins</li></ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Dec 2021 – Jan 2022<br>Remote, USA</div>
+        <div>
+          <h3>World Bank Group</h3><p class="role">Technical consultant</p>
+          <ul><li>Prototyped a legal analytics tool that analyzes 10,000+ court judgments to detect bias.</li></ul>
+          <ul class="tags"><li>Python</li><li>Django</li><li>React</li><li>MySQL</li></ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when">Jun 2015 – Oct 2021<br>Remote, New Zealand</div>
+        <div>
+          <h3>Maxum Data Limited</h3><p class="role">Lead developer</p>
+          <ul>
+            <li>Built mPort, a mobile number portability tracker that moved 10,000+ users between network operators.</li>
+            <li>Created a toll-free number search tool that raised adoption by 35%.</li>
+            <li>Wrote Lua scripts for FreeSWITCH that halved the network team's setup and customization time.</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li>Django</li><li>MySQL</li><li>Lua</li></ul>
+        </div>
+      </article>
+
+      <details>
+        <summary>Earlier work, 2011–2015</summary>
+        <dl class="early">
+          <dt>Jun – Sep 2015</dt><dd><b>Domains Bot</b>, senior Python engineer. Redesigned the database schema for 10% faster queries.</dd>
+          <dt>May 2014 – Jan 2015</dt><dd><b>SunUp Financial</b>, senior Python engineer. Built the "Balance Credit" onboarding flow for payday loan customers, working closely with the design team.</dd>
+          <dt>Jul 2013 – Apr 2014</dt><dd><b>Soko Inc.</b>, Nairobi. Led an Android app for Soko artisans, contributed to its REST API, and helped migrate the web project from Django to Pyramid.</dd>
+          <dt>Dec 2012 – Jul 2013</dt><dd><b>Sweet Relish</b>, senior Python engineer. Fixed critical bugs and improved performance in a jQuery Mobile app.</dd>
+          <dt>Sep – Nov 2012</dt><dd><b>Code Painters</b>, lead engineer. Led a gym management site with subscriptions and session reservations.</dd>
+          <dt>Mar – Apr 2012</dt><dd><b>MANteresting</b> and <b>Apartment Rentals</b>. Led version 1 of MANteresting's REST APIs for its mobile app, and fixed bugs on Apartment Rentals.</dd>
+          <dt>Sep – Dec 2011</dt><dd><b>Alliance Technologies</b>, Nairobi, software engineering intern. Built a mobile proof of concept for the A1 ERP in Java (J2ME).</dd>
+        </dl>
+      </details>
+    </section>
+
+    <section id="skills" aria-labelledby="h-skills">
+      <h2 id="h-skills">Skills and education</h2>
+      <dl class="skills">
+        <dt>Backend</dt><dd>Python, Django, FastAPI, Django REST Framework, Celery</dd>
+        <dt>Frontend</dt><dd>React, Next.js, jQuery (legacy)</dd>
+        <dt>Databases</dt><dd>PostgreSQL, MySQL</dd>
+        <dt>Cloud and DevOps</dt><dd>AWS, Docker, Jenkins, GitHub Actions</dd>
+      </dl>
+      <div class="edu" style="margin-top:2.5rem">
+        <h3>BSc Computer Science, 2012</h3>
+        <p>Jomo Kenyatta University of Agriculture and Technology. Second Class Honours, Upper Division.</p>
+        <p>Coursework: programming, data structures and algorithms, database management, computer security.</p>
+        <p>Certificate: Kotlin for Java Developers, Coursera (2019).</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="h-contact">
+      <h2 id="h-contact">Have a slow query or a big migration?</h2>
+      <a class="mail" href="mailto:nickaigi@gmail.com">nickaigi@gmail.com</a>
+      <div class="links">
+        <a href="https://github.com/nickaigi">github.com/nickaigi</a>
+        <a href="https://linkedin.com/in/nickson-kaigi">linkedin.com/in/nickson-kaigi</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="yr">2026</span> Nickson Kaigi · Nairobi, Kenya</footer>
+</div>
+<script>
+(function(){
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
 </html>
